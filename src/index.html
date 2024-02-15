@@ -4,12 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homework 10</title>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <select class="breed-select"></select>
-    <p class="loader">Loading data, please wait...</p>
-    <p class="error">Oops! Something went wrong! Try reloading the page!</p>
-    <div class="cat-info"></div>
+    <select id="breed-select" class="breed-select hidden"></select>
+    <div id="loader" class="loader">
+      <p>L &nbsp; ading data, please wait...</p>
+    </div>
+    <p id="error" class="error hidden">
+      Oops! Something went wrong! Try reloading the page!
+    </p>
+    <div id="cat-info" class="cat-info hidden">
+      <div class="image">
+        <img src="" alt="" />
+      </div>
+      <div class="details">
+        <span class="name"></span>
+        <span class="description"></span>
+        <div>
+          <span class="temperament-caption">Temperament: </span>
+          <span class="temperament"></span>
+        </div>
+      </div>
+    </div>
 
     <script src="index.js" type="module"></script>
   </body>
