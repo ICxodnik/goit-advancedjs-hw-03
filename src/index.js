@@ -11,7 +11,6 @@ const catDesc = infoRef.querySelector(".details > .description");
 const catTemp = infoRef.querySelector(".details .temperament");
 
 window.addEventListener("error", showError);
-window.addEventListener("unhandledrejection", showError);
 displayBreeds();
 
 function showError() {
@@ -79,6 +78,9 @@ async function displayDetails(catId) {
         catTemp.textContent = details.temperament;
         showInfo()
     }
+    catch (e) {
+        showError();
+    }
     finally {
         hideLoader();
     }
@@ -90,6 +92,9 @@ async function displayBreeds() {
         data.unshift({ value: "", text: "Please chooose your cat", placeholder: true });
         selectCtrl.setData(data);
         showBreedSelector();
+    }
+    catch (e) {
+        showError();
     }
     finally {
         hideLoader();
